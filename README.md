@@ -1,1 +1,1 @@
-# ReactStudyApp
+# HotsComps

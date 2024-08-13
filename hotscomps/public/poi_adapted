@@ -1,0 +1,184 @@
+{
+    "categories": [
+        {
+            "name": "Accommodation",
+            "color": "blue",
+            "pois": [
+                {
+                    "id": 6,
+                    "position": [48.7750, 9.1830],
+                    "title": "Hotel A",
+                    "description": "A comfortable hotel with modern amenities."
+                },
+                {
+                    "id": 7,
+                    "position": [48.7760, 9.1840],
+                    "title": "Hotel B",
+                    "description": "A luxury hotel with a beautiful view."
+                },
+                {
+                    "id": 14,
+                    "position": [48.7770, 9.1850],
+                    "title": "Hotel C",
+                    "description": "A budget-friendly hotel with excellent service."
+                },
+                {
+                    "id": 15,
+                    "position": [48.7780, 9.1860],
+                    "title": "Hotel D",
+                    "description": "An eco-friendly hotel with sustainable practices."
+                },
+                {
+                    "id": 16,
+                    "position": [48.7790, 9.1870],
+                    "title": "Hotel E",
+                    "description": "A boutique hotel with a unique design."
+                }
+            ]
+        },
+        {
+            "name": "Natural Attractions",
+            "color": "green",
+            "pois": [
+                {
+                    "id": 8,
+                    "position": [48.7790, 9.1800],
+                    "title": "Botanical Garden",
+                    "description": "A serene garden with diverse plant species."
+                },
+                {
+                    "id": 9,
+                    "position": [48.7800, 9.1790],
+                    "title": "City Park",
+                    "description": "A large park with walking trails and picnic areas."
+                },
+                {
+                    "id": 17,
+                    "position": [48.7810, 9.1780],
+                    "title": "Nature Reserve",
+                    "description": "A protected area with diverse wildlife and hiking trails."
+                },
+                {
+                    "id": 18,
+                    "position": [48.7820, 9.1770],
+                    "title": "Forest Walk",
+                    "description": "A tranquil forest path ideal for nature walks."
+                },
+                {
+                    "id": 19,
+                    "position": [48.7830, 9.1760],
+                    "title": "River Viewpoint",
+                    "description": "A scenic viewpoint overlooking the river."
+                }
+            ]
+        },
+        {
+            "name": "Entertainment",
+            "color": "red",
+            "pois": [
+                {
+                    "id": 10,
+                    "position": [48.7710, 9.1810],
+                    "title": "Cinema X",
+                    "description": "A popular cinema with the latest movies."
+                },
+                {
+                    "id": 11,
+                    "position": [48.7720, 9.1820],
+                    "title": "Theater Y",
+                    "description": "A historic theater offering various performances."
+                },
+                {
+                    "id": 20,
+                    "position": [48.7700, 9.1800],
+                    "title": "Live Music Venue",
+                    "description": "A venue for live music performances and concerts."
+                },
+                {
+                    "id": 21,
+                    "position": [48.7690, 9.1790],
+                    "title": "Comedy Club",
+                    "description": "A lively club featuring stand-up comedy shows."
+                },
+                {
+                    "id": 22,
+                    "position": [48.7680, 9.1780],
+                    "title": "Nightclub Z",
+                    "description": "A popular nightclub with dancing and entertainment."
+                }
+            ]
+        },
+        {
+            "name": "Cultural and Historical Sites",
+            "color": "orange",
+            "pois": [
+                {
+                    "id": 1,
+                    "position": [48.7758, 9.1829],
+                    "title": "Stuttgart Main Station",
+                    "description": "The central railway station of Stuttgart, Germany."
+                },
+                {
+                    "id": 4,
+                    "position": [48.7741, 9.1798],
+                    "title": "Stuttgart Castle",
+                    "description": "A historic castle and one of Stuttgart's most famous landmarks."
+                },
+                {
+                    "id": 23,
+                    "position": [48.7760, 9.1800],
+                    "title": "Museum A",
+                    "description": "A museum showcasing local history and artifacts."
+                },
+                {
+                    "id": 24,
+                    "position": [48.7770, 9.1810],
+                    "title": "Historic Church",
+                    "description": "An old church with significant historical importance."
+                },
+                {
+                    "id": 25,
+                    "position": [48.7780, 9.1820],
+                    "title": "Art Gallery",
+                    "description": "An art gallery featuring contemporary and classic artworks."
+                }
+            ]
+        },
+        {
+            "name": "Commercial and Shopping",
+            "color": "teal",
+            "pois": [
+                {
+                    "id": 12,
+                    "position": [48.7730, 9.1835],
+                    "title": "Shopping Mall Z",
+                    "description": "A large shopping mall with various stores and dining options."
+                },
+                {
+                    "id": 13,
+                    "position": [48.7740, 9.1845],
+                    "title": "Market Street",
+                    "description": "A bustling street with numerous shops and boutiques."
+                },
+                {
+                    "id": 26,
+                    "position": [48.7750, 9.1855],
+                    "title": "Retail Park",
+                    "description": "A retail park with a variety of big-name stores."
+                },
+                {
+                    "id": 27,
+                    "position": [48.7760, 9.1865],
+                    "title": "Shopping District",
+                    "description": "A vibrant shopping district with unique shops and eateries."
+                },
+                {
+                    "id": 28,
+                    "position": [48.7770, 9.1875],
+                    "title": "Flea Market",
+                    "description": "A lively flea market with antiques and vintage goods."
+                }
+            ]
+        }
+    ]
+}

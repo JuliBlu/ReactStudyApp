@@ -1,0 +1,125 @@
+
+.active {
+    border: 5px solid #ffffff; /* You can adjust border properties as needed */
+}
+
+
+/* View1.css */
+.hexagon-container {
+    position: relative;
+    width: 150px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    margin: 10px; /* Adjust margin as needed */
+    overflow: hidden;
+    cursor: pointer; /* Add cursor pointer to indicate clickability */
+}
+
+.hexagon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 85% 0%, 100% 50%, 85% 100%, 50% 100%, 15% 100%, 0% 50%, 15% 0%);
+    background-color: #ccc; /* Background color of hexagon */
+    border: 2px solid transparent; /* Transparent border by default */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.hexagon.selected {
+    border-color: red; /* Red border when selected */
+}
+
+.hexagon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.marginAll15 {
+    margin-bottom: 15pt;
+    margin-top: 15pt;
+    margin-right: 15pt;
+    margin-left: 15pt;
+}
+
+
+/* View1.css */
+.showcase-container {
+    padding: 20px;
+    background-image: url('./assets/backgrounds/background.png');
+    background-color: #e0e0e0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+}
+
+
+.showcase-grid {
+    /* No need for grid here */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Gap between items */
+}
+
+.showcase-item {
+    cursor: pointer;
+    width: 200px; /* Set width of each item */
+    height: 200px; /* Set a fixed height for each item */
+    overflow: hidden; /* Hide overflow if the image is larger */
+}
+
+.showcasediv {
+    margin: 3px; /* Margin of 3 pixels on all sides */
+    border: 3px solid #6A5ACD; /* 3-pixel border with purple-blueish color */
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+/* View1.css */
+.gallery-container {
+    padding: 20px;
+    background-color: #1D1F2B;
+    height: auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    width: 50%;
+    height: 100px; /* Set a fixed height for each item */
+    overflow: hidden; /* Hide overflow if the image is larger */
+}
+
+.gallery-item {
+    cursor: pointer;
+    width: 50%;
+    height: 100px; /* Set a fixed height for each item */
+    overflow: hidden; /* Hide overflow if the image is larger */
+    transition: transform 0.2s; /* Add a transition effect for smooth feedback */
+}
+
+.gallery-item:active {
+    transform: scale(0.95); /* Scale down the image slightly on click */
+}
+
+.gallerydiv {
+    margin: 3px; /* Margin of 3 pixels on all sides */
+    border: 3px solid #6A5ACD; /* 3-pixel border with purple-blueish color */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
