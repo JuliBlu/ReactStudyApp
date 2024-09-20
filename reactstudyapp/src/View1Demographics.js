@@ -12,6 +12,7 @@ import {
     Text
 } from '@chakra-ui/react';
 import TopBar from './TopBar';
+import DataStorageHandler from './DataStorageHandler';  // Import DataStorageHandler
 
 function View1Demographics(props) {
     const [formData, setFormData] = useState({
@@ -20,12 +21,8 @@ function View1Demographics(props) {
         nationality: '',
         maritalStatus: '',
         children: '',
-        educationLevel: '',
         occupation: '',
-        healthLevels: '',
         disabilities: '',
-        politicalAffiliation: '',
-        religiousAffiliation: '',
         hobbies: '',
         sports: '',
         language: '',
@@ -55,13 +52,13 @@ function View1Demographics(props) {
         };
 
         // Retrieve existing data
-        const existingData = JSON.parse(localStorage.getItem('formData') || '[]');
+        const existingData = DataStorageHandler.getData('formData') || [];
         
         // Append new user profile
         existingData.push(newUserProfile);
 
-        // Save back to localStorage
-        localStorage.setItem('formData', JSON.stringify(existingData));
+        // Save back to localStorage using DataStorageHandler
+        DataStorageHandler.saveData('formData', existingData);
         
         // Clear form data
         setFormData({
@@ -70,12 +67,8 @@ function View1Demographics(props) {
             nationality: '',
             maritalStatus: '',
             children: '',
-            educationLevel: '',
             occupation: '',
-            healthLevels: '',
             disabilities: '',
-            politicalAffiliation: '',
-            religiousAffiliation: '',
             hobbies: '',
             sports: '',
             language: '',
@@ -89,10 +82,10 @@ function View1Demographics(props) {
     return (
         <ChakraProvider>
             <TopBar toggleDrawer={props.toggleDrawer} />
-            <Box bg="#f0f0f0" p={6} minHeight="100vh">
+            <Box bg="#ffffff" p={6} minHeight="100vh">
                 <VStack spacing={4} align="stretch">
 
-                    <Box bg="white" p={4} borderRadius="md" boxShadow="sm">
+                    <Box bg="#e0e0e0" p={4} borderRadius="md" boxShadow="sm">
                         <Text fontSize="2xl" fontWeight="bold" mb={2}>
                             Demographic Information
                         </Text>
@@ -177,25 +170,6 @@ function View1Demographics(props) {
                     </FormControl>
 
                     <FormControl>
-                        <FormLabel>Education Level</FormLabel>
-                        <Select
-                            name="educationLevel"
-                            value={formData.educationLevel}
-                            onChange={handleChange}
-                            borderColor="gray.400"
-                            _hover={{ borderColor: 'gray.600' }}
-                            _focus={{ borderColor: 'gray.600' }}
-                        >
-                            <option value="">Select level</option>
-                            <option value="high-school">High School</option>
-                            <option value="associate">Associate Degree</option>
-                            <option value="bachelor">Bachelor's Degree</option>
-                            <option value="master">Master's Degree</option>
-                            <option value="doctorate">Doctorate</option>
-                        </Select>
-                    </FormControl>
-
-                    <FormControl>
                         <FormLabel>Occupation</FormLabel>
                         <Input
                             type="text"
@@ -209,48 +183,10 @@ function View1Demographics(props) {
                     </FormControl>
 
                     <FormControl>
-                        <FormLabel>Health Levels</FormLabel>
-                        <Textarea
-                            name="healthLevels"
-                            value={formData.healthLevels}
-                            onChange={handleChange}
-                            borderColor="gray.400"
-                            _hover={{ borderColor: 'gray.600' }}
-                            _focus={{ borderColor: 'gray.600' }}
-                        />
-                    </FormControl>
-
-                    <FormControl>
                         <FormLabel>Disabilities/Accessibility</FormLabel>
                         <Textarea
                             name="disabilities"
                             value={formData.disabilities}
-                            onChange={handleChange}
-                            borderColor="gray.400"
-                            _hover={{ borderColor: 'gray.600' }}
-                            _focus={{ borderColor: 'gray.600' }}
-                        />
-                    </FormControl>
-
-                    <FormControl>
-                        <FormLabel>Political Affiliation</FormLabel>
-                        <Input
-                            type="text"
-                            name="politicalAffiliation"
-                            value={formData.politicalAffiliation}
-                            onChange={handleChange}
-                            borderColor="gray.400"
-                            _hover={{ borderColor: 'gray.600' }}
-                            _focus={{ borderColor: 'gray.600' }}
-                        />
-                    </FormControl>
-
-                    <FormControl>
-                        <FormLabel>Religious Affiliation</FormLabel>
-                        <Input
-                            type="text"
-                            name="religiousAffiliation"
-                            value={formData.religiousAffiliation}
                             onChange={handleChange}
                             borderColor="gray.400"
                             _hover={{ borderColor: 'gray.600' }}

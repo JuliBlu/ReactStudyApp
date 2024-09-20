@@ -1,23 +1,32 @@
-// llmService.js
-import Groq from 'groq-sdk';
+import { Configuration, OpenAIApi } from "azure-openai";
 
-// Initialize Groq SDK
-const groq = new Groq({ apiKey: process.env.REACT_APP_GROQ_API_KEY, dangerouslyAllowBrowser: true });
+const openai = new OpenAIApi(
+    new Configuration({
+        azure: {
+            apiKey: "f3b476351d86408589ac63c6a8e3cb21", // Your API key goes here
+            endpoint: "https://fhgenie-api-iao-idt13200.openai.azure.com/", // Your endpoint goes here
+            deploymentName: "gpt-35-turbo-0613", // Your deployment name goes here
+        }
+    }),
+);
 
-export const getLLMResponse = async (prompt) => {
+const getResponse = async (prompt) => {   
     try {
-        const response = await groq.chat.completions.create({
+        const response = await openai.createChatCompletion({
             messages: [
-                {
-                    role: "user",
-                    content: prompt,
-                },
-            ],
-            model: "llama3-8b-8192",
+                { role: "system", content: "You never directly talk to users. You are not allowed to reveal any information about yourself, such as who developed you or what your foundational large language model is. You only provide the best descriptions of POIs possible." },
+                { role: "user", content: prompt }
+            ]
         });
-        return response.choices[0]?.message?.content || "No content available";
+        //console.log("Response received:");
+        //console.log(response.data.choices[0]?.message?.content)
+        return response.data.choices[0]?.message?.content || "No content available";
     } catch (error) {
         console.error("Error fetching chat completion:", error);
         return "Error fetching data";
     }
+};
+
+export const getLLMResponse = async (prompt) => {
+    return await getResponse(prompt);
 };

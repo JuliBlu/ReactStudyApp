@@ -44,18 +44,20 @@ const generateAdaptedPOIs = async (pois) => {
 
     const updatedPOIs = await Promise.all(pois.map(async (poi) => {
         const promptData = `User_Profile = [${jsonString}]; POI = [Title: ${poi.title}, Description: ${poi.description}]`;
-        const prompt = `Find a title and a description of the mentioned POI which is personalized to the user to make it more likely for them to visit the POI.`;
-        const resultFormat = "Only Return the Result in JSON format, Don't add any other comments in the response.";
+        const prompt = `Find an adapted title and an adapted description of the mentioned POI which is personalized to the user to make it more likely for them to visit the POI.`;
+        const resultFormat = "Make the description about the same amount of words as the original description (+or-10%). Only Return the Result in JSON format (like this: {\"Title\": \"this is a title\", \"Description\": \"this is a description\"}), Don't add any other comments in the response.";
         const finalPrompt = `${promptData} ${prompt} ${resultFormat}`;
 
+        var adaptedPOI = null
+        //while (adaptedPOI == null){
         const result = await getLLMResponse(finalPrompt);
-
-        const adaptedPOI = parseResponse(result);
+        adaptedPOI = parseResponse(result);
+        //}
 
         if (adaptedPOI) {
-            return { originalTitle: poi.title, adapted: [adaptedPOI.title, adaptedPOI.description] };
+            return { originalTitle: poi.title, adapted: [adaptedPOI.title, adaptedPOI.description, poi.imagesrc]};
         } else {
-            return { originalTitle: poi.title, adapted: ['Untitled', 'No description available'] };
+            return { originalTitle: poi.title, adapted: ['Untitled', 'No description available', "undefined"] };
         }
     }));
 
@@ -82,7 +84,8 @@ function POICategoryComponent(props) {
                 adaptedPOIs.forEach(poi => {
                     const adaptedTitle = poi.adapted[0];
                     const adaptedDescription = poi.adapted[1];
-                    props.savePOIData(poi.originalTitle, [adaptedTitle, adaptedDescription]);
+                    const imagesrc = poi.adapted[2]
+                    props.savePOIData(poi.originalTitle, [adaptedTitle, adaptedDescription, imagesrc]);
                 });
             }
             setIsLoading(false);
@@ -122,7 +125,7 @@ function POICategoryComponent(props) {
                     <Button
                         colorScheme="blue"
                         mt="4"
-                        onClick={() => props.switchView('view3')}
+                        onClick={() => props.switchView(props.nextView)}
                         isDisabled={isLoading}
                     >
                         Proceed to Survey

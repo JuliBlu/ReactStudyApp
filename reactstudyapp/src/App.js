@@ -34,7 +34,6 @@ function App() {
             const dataMap = new Map(prevData.map(item => [item.key, item.value]));
             dataMap.set(originalTitle, adaptedPOI);
             const updatedList = Array.from(dataMap, ([key, value]) => ({ key, value }));
-            console.log("Saved POI Data:"+updatedList)
             return updatedList;
         });
     };

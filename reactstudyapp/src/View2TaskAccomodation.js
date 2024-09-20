@@ -4,7 +4,7 @@ import POICategoryComponent from './POICategoryComponent';
 function View2TaskAccomodation(props) {
     
     return (
-        <POICategoryComponent category={{ color: 'blue', name: 'Accommodation' }} savePOIData={props.savePOIData} switchView={props.switchView} toggleDrawer={props.toggleDrawer} />
+        <POICategoryComponent category={{ color: 'blue', name: 'Accommodation' }} savePOIData={props.savePOIData} switchView={props.switchView} toggleDrawer={props.toggleDrawer} nextView={"view3"} />
     );
 }
 

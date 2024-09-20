@@ -14,8 +14,7 @@ function View0InformedConcent({ toggleDrawer, switchView }) {
             <TopBar toggleDrawer={toggleDrawer} /> {/* Include TopBar at the top */}
             <Box padding="6" maxW="800px" margin="0 auto">
                 <Text fontSize="3xl" mb="6" fontWeight="bold">Informed Consent Form</Text>
-
-                <VStack align="start" spacing={4}>
+                <VStack bg="#e0e0e0" p={4} borderRadius="md" boxShadow="sm" align="start" spacing={4}>
                     <Text>
                         **Study Title**: Understanding User Interaction with Map-Based Surveys
                     </Text>
@@ -69,11 +68,15 @@ function View0InformedConcent({ toggleDrawer, switchView }) {
 
                     <Checkbox
                         isChecked={isChecked}
-                        onChange={handleCheckboxChange}  // Update isChecked when the checkbox is clicked
+                        onChange={handleCheckboxChange}
+                        borderColor={"black"}
+                        
                     >
                         I have read and understood the information above, and I voluntarily agree to participate in this study.
                     </Checkbox>
-                    
+
+
+
                     <Button
                         colorScheme="blue"
                         mt="4"
